@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF- 8">
+        <title>taka's todoリスト</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" type="text/CSS" href="todo.css">
+		<script src="https://kit.fontawesome.com/b77477b1b4.js" crossorigin="anonymous"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+        <header>
+            <div class="title">
+                <div class="today1">
+                   <span id="day"></span> 
+                   Todoリスト
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div id="app">
+                    <h1>
+                        今日の積み上げ
+                        <button @click="purge">完了タスク全て削除</button>
+                        <span class="info">({{ remaining.length }}/{{ todos.length }})</span>
+                    </h1>
+                    <ul>
+                        <li v-for="(todo, index) in todos">
+                            <label class="like">
+                            <input type="checkbox" v-model="todo.isDone">
+                            <!--//todoのisdoneがtrueの時done classをつける-->
+                            <span v-bind:class="{done2: todo.isDone}">{{ todo.title }}</span>
+                            <i class="material-icons heart">thumb_up_alt</i>
+                             <span @click="deleteItem(index)" class="delete_box"><button v-bind:class="{done3: todo.isDone}" class="command"><i class="fa fa-trash-o" aria-hidden="true"></i></button></span>   
+                            </label>
+                            </li>
+                        <li v-show="!todos.length">リストなし</li>
+                    </ul>
+                    <div class="list_add_div">
+                        <i class="fa fa-plus" id="list_add" aria-hidden="true"></i>
+                    </div>
+                    <form v-on:submit.prevent="addItem" id="todo_add"> 
+                        <input type="text" v-model="newItem">
+                        <input type="submit" value="todo追加">
+                    </form>
+                </div>
+                <div class="calendar">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th id="prev">&laquo;</th>
+                            <th id="title" colspan="5">2020/05</th>
+                            <th id="next">&raquo;</th>
+                        </tr>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td id="today" colspan="7">Today</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div id="timer">00:00:00</div>
+                <div class="sub">
+                    <button id="start" class="bl">START</button>
+                </div>
+            </div>
+            <div class="title">
+                <div class="today1">
+                    Body管理(BMI)
+                </div>
+            </div>
+            <!--vueに書き換え-->
+            <div id="app2" class="health">
+                <div class="left">
+                    <label for="height">身長(cm)</label>
+                    <input type="number" name="num1" v-model.number="num1" @change="calc" id="height">
+                    <label for="weight">体重(kg)</label>
+                    <input type="number" name="num2" v-model.number="num2" @change="calc" id="weight">
+                    <p>今日のBMI：<span v-if="done">{{ answer }}</span></p>
+                </div>
+            </div>
+            <div class="title">
+                <div class="today1">
+                    カロリー計算(kcal)
+                </div>
+            </div>
+            <div class="health">
+                <div class="left">
+                    <div class="cal">
+                        <label for="carbo">炭水化物(g)</label>
+                        <input type="number" id="carbo">
+                    </div>
+                    <div class="cal">
+                        <label for="protein">たんぱく質(g)</label>
+                        <input type="number" id="protein">
+                    </div>
+                    <div class="cal">
+                        <label for="fat">脂質(g)</label>
+                        <input type="number" id="fat">
+                    </div>
+                    <div class="bm">
+                        <button id="cal_btn">カロリー計算＆PFCグラフ</button>
+                    </div>
+                    <p>今日のカロリー:<span id="cal_value"></span></p>
+                </div>
+                <div id="target"></div>
+            </div>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="todo.js"></script>
+	</body>
+</html>	
+
+

@@ -1,0 +1,357 @@
+body{
+	font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size: 17px;
+	margin:0 ;
+}
+
+header{
+	background-color: #F7F7F7;
+}
+
+.title{
+	width: 70%;
+	background-color: #00CCFF;
+	color:white;
+	margin:0 auto;
+	max-width: 600px;
+}
+
+.today1{
+	padding:20px;
+}
+
+main{
+	width: 100%;
+	background-color: #F7F7F7;
+}
+
+.container{
+	width: 70%;
+	background-color: white;
+	margin:0 auto;
+	padding-bottom: 50px;
+	max-width: 600px;
+}
+
+
+#list{
+	list-style: none;
+	padding-left:0;
+	margin:0;
+}
+
+#list li{
+	padding:10px 30px;
+	border-bottom: 1px solid #999;
+
+}
+#btn{
+	float:right;
+
+}
+
+#delete{
+	float:right;
+	margin-right:3px;
+}
+#clear{
+	float:right;
+}
+.clear{
+	display:none;
+}
+.task{
+	padding-top:30px;
+	padding-left: 30px;
+}
+
+#input_text{
+	font-size: 20px;
+}
+
+.done{
+	text-decoration: line-through solid black;
+	font-size: 20px;
+}
+
+.b-done{
+	background-color:blue;
+	color:white;
+}
+
+#add{
+	margin:0 10px 0 0;
+}
+
+.task_la{
+	display: block;
+	cursor: pointer;
+}
+
+.task_input{
+	width: 150px;
+}
+
+#timer{
+	padding-left:30px;
+	background-color: black;
+	color:white;
+	padding:30px;
+	font-size: 30px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+#start{
+	margin-right:10px;
+	padding:10px;
+	width: 100px;
+	color:white;
+	outline:none;
+	cursor: pointer;
+	border-style: none;
+}
+
+#start:active{
+	outline:none;
+}
+
+#start:checked{
+	outline:none;
+}
+
+
+.sub{
+	padding-left:30px;
+}
+
+.bl{
+	background-color:black;
+}
+.red{
+	background-color:red;
+}
+
+footer{
+	width: 100%;
+	background-color: #F7F7F7;
+}
+
+.fot{
+	width: 70%;
+	margin:0 auto;
+	background-color:silver;
+	color:white;
+	text-align: center;
+	padding: 15px 0 15px;
+}
+
+.health{
+	width: 70%;
+	background-color: white;
+	margin:0 auto;
+	padding-bottom: 50px;
+	max-width: 600px;
+	padding-top:20px;
+}
+.health label{
+	width: 200px;
+	display: block;
+}
+
+#bmi_btn{
+	margin-top:20px;
+	display: block;
+}
+#bm_value{
+	padding:3px;
+	
+}
+#cal_value{
+	padding:3px;
+	
+}
+
+.left{
+	padding-left: 30px;
+}
+.cal{
+	margin-top:10px;
+}
+.bm{
+	margin-top:20px;
+}
+
+
+	/*カレンダーcss*/
+table{
+	border:2px solid #eee;
+	border-collapse: collapse;
+}
+
+.calendar{
+	padding:10px;
+}
+
+thead,tfoot{
+	background: #eee;
+}
+
+th,
+td{
+	padding:8px;
+	text-align: center;
+}
+
+tbody td:first-child{
+	color:red;
+}
+
+tbody td:last-child{
+	color:blue;
+}
+
+tfoot{
+	font-weight: bold;
+}
+
+
+td.disabled {
+	opacity: 0.3;
+	}
+	
+	td.today {
+	font-weight: bold;
+	}
+
+#prev,
+#next,
+#today{
+	cursor: pointer;
+	user-select:none;
+
+}
+
+.list_add_div{
+	padding-left:30px;
+}
+
+#list_add{
+	cursor: pointer;
+}
+
+input[type="checkbox" ]{
+	margin-left:0;
+}
+
+
+/*vueのcss*/
+#app ul{
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 10px;
+}
+#app ul li{
+padding: 10px 30px;
+border-bottom: 1px solid #EEEEEE;
+position: relative;
+}
+
+.command{
+	cursor:pointer;
+}
+.delete_box{
+	position: absolute;
+	right:10px;
+	top:13px;
+}
+.done2{
+	text-decoration: line-through solid black;
+	color:#bbb;
+}
+.info{
+	color:#bbb;
+	font-size:14px;
+}
+h1{
+	margin:0;
+	padding-left:30px;
+	padding-top:10px;
+}
+form{
+	padding-left:30px;
+}
+#app input[type="text"] {
+	padding: 2px;
+  }
+.done3{
+	color:red;
+}
+
+
+
+/*いいねボタン*/  
+  .like {
+    cursor: pointer;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+  }
+    
+  .heart {
+    color: #e4e4e4;
+    user-select: none;
+	position: relative;
+	top:5px;
+  }
+  
+  .like [type="checkbox"]:checked ~ .heart {
+    animation-name: heart;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+  }
+
+  /*グラフ*/
+  #target{
+	  width: 95%;
+	  border:1px solid black;
+	  margin:0 auto;
+  }
+  
+  @keyframes heart {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      color: red;
+    }
+  }
+
+
+@media screen and (max-width: 600px){
+
+	.container{
+		width: 95%;
+	}
+	.title{
+		width: 95%;
+	}
+
+	.health{
+		width: 95%;
+	}
+	.calendar{
+		padding:10px 0 0 30px;
+	}
+	th,td{
+	padding:3px;
+	}
+	table{
+		font-size: 12px;
+	}
+
+}
