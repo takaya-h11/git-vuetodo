@@ -52,13 +52,53 @@
   todo_add.style.display = "block";
   });
 
-//今日の日付け取得処理
+/* //今日の日付け取得処理
 let today = new Date();
 let todayHtml =
   today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate();
 
 const todayspan = document.getElementById("day");
 todayspan.innerHTML = todayHtml;
+//
+ *///vueでタイマー
+Vue.component('clock',{
+  data: function(){
+    return {
+      time: '12:34:56'
+    }
+  },
+  mounted: function(){
+    let timerID = setInterval(this.refresh,500);
+  },
+  methods: {
+    refresh: function(){
+       let now = new Date();
+       this.time = `${now.getHours()}:${('0' + now.getMinutes()).slice(-2)}:${('0' + now.getSeconds()).slice(-2)}`
+      }
+  },
+  template: '<span>{{ time }}   TODOリスト</span>'
+})
+//Vueで今日の日付け
+Vue.component('date',{
+  data: function(){
+   return {
+     today: ''
+   }
+  },
+  mounted: function(){
+    const now = new Date();
+    this.today = `${now.getFullYear()}/${now.getMonth()+1}/${now.getDate()}`
+  },
+ template: '<span>{{ today }} </span>'
+})
+
+var app1 = new Vue({
+  el:"#app1"
+})
+
+
+
+
 
 //タイマー作成
 let start;
