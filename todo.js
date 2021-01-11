@@ -52,15 +52,8 @@
   todo_add.style.display = "block";
   });
 
-/* //今日の日付け取得処理
-let today = new Date();
-let todayHtml =
-  today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate();
 
-const todayspan = document.getElementById("day");
-todayspan.innerHTML = todayHtml;
-//
- *///vueでタイマー
+ ///vueでタイマー
 Vue.component('clock',{
   data: function(){
     return {
@@ -339,9 +332,20 @@ var app2 = new Vue({
     createCalendar();
 }
 
+
+const calbutton = document.getElementById("cal_btn");
+calbutton.addEventListener("click", function () {
+  const carbo = document.getElementById("carbo").value * 4;
+  const protein = document.getElementById("protein").value * 4;
+  const fat = document.getElementById("fat").value * 9;
+  const cal = parseFloat(carbo) + parseFloat(protein) + parseFloat(fat);
+  const result_cal = document.getElementById("cal_value");
+
+  result_cal.innerHTML = cal + "kcal";
+});
+
 /*グラフ*/ 
 (function() {
-  'use strict';
   function drawChart() {
     let target = document.getElementById('target');
     let data;
@@ -352,12 +356,7 @@ var app2 = new Vue({
       is3D:true
     };
     let chart = new google.visualization.PieChart(target);
-    /*data = new google.visualization.DataTable();
-    data.addColumn('string', 'Language');
-    data.addColumn('number', 'Votes');
-    data.addRow(['炭水化物', 30]);
-    data.addRow(['たんぱく質', 20]);
-    data.addRow(['脂質', 10]);*/ 
+ 
     data = new google.visualization.arrayToDataTable([
         ['language', 'Votes'],
         ['炭水化物', 0],
