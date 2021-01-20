@@ -327,7 +327,6 @@ var app2 = new Vue({
         month = 0;　//1月にする
       }
       createCalendar();
-
     });
     createCalendar();
 }

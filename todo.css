@@ -1,5 +1,5 @@
 body{
-	font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-family: sans-serif;
 	font-size: 17px;
 	margin:0 ;
 }
@@ -298,15 +298,15 @@ form{
     border-radius: 50%;
   }
     
-  .heart {
+  .good {
     color: #e4e4e4;
     user-select: none;
 	position: relative;
 	top:5px;
   }
   
-  .like [type="checkbox"]:checked ~ .heart {
-    animation-name: heart;
+  .like [type="checkbox"]:checked ~ .good {
+    animation-name: good;
     animation-duration: .6s;
     animation-fill-mode: forwards;
   }
@@ -318,7 +318,7 @@ form{
 	  margin:0 auto;
   }
   
-  @keyframes heart {
+  @keyframes good {
     0% {
       transform: scale(0);
     }

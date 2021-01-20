@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta charset="UTF- 8">
+		<meta charset="UTF-8">
         <title>taka's todoリスト</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" type="text/CSS" href="todo.css">
@@ -33,7 +33,7 @@
                             <input type="checkbox" v-model="todo.isDone">
                             <!--//todoのisdoneがtrueの時done classをつける-->
                             <span v-bind:class="{done2: todo.isDone}">{{ todo.title }}</span>
-                            <i class="material-icons heart">thumb_up_alt</i>
+                            <i class="material-icons good">thumb_up_alt</i>
                              <span @click="deleteItem(index)" class="delete_box"><button v-bind:class="{done3: todo.isDone}" class="command"><i class="fa fa-trash-o" aria-hidden="true"></i></button></span>   
                             </label>
                             </li>
